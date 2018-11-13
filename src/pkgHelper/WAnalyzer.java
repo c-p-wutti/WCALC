@@ -2,6 +2,8 @@ package pkgHelper;
 
 import java.util.ArrayList;
 
+import pkgEnum.WCALC;
+
 public class WAnalyzer {
 	public static ArrayList<String> split(ArrayList<String> file_lines) throws Exception{
 		ArrayList<String> ret = new ArrayList<>();

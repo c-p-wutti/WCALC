@@ -11,12 +11,15 @@ import pkgHelper.WHelperSemanticTable;
 public class main {
 
 	public static void main(String[] args) {
-
+		WHelperSemanticTable.fillTable();
+		
 		try {
 			ArrayList<String> str = WFileHelper.getFileContent("/home/wuttic/Dokumente/Rep/Java/WCalc/samplefile.cpw");
 			ArrayList<String> str2 = WAnalyzer.split(str);
 			for(String s : str2)
 				System.out.println(" " + s + ", ");
+			
+			System.out.println(WHelperSemanticTable.getCommand("ADDVE2C"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
