@@ -15,11 +15,16 @@ public class main {
 		
 		try {
 			ArrayList<String> str = WFileHelper.getFileContent("/home/wuttic/Dokumente/Rep/Java/WCalc/samplefile.cpw");
-			ArrayList<String> str2 = WAnalyzer.split(str);
-			for(String s : str2)
-				System.out.println(" " + s + ", ");
+			ArrayList<ArrayList<String>> str2 = WAnalyzer.split(str);
+			for(ArrayList<String> s : str2) {
+				System.out.println("START COMMAND");
+				for(String strt: s) {
+					System.out.println(" " + strt + " ");
+				}
+				System.out.println("END COMMAND ");
+			}
 			
-			System.out.println(WHelperSemanticTable.getCommand("ADDVE2C"));
+			//System.out.println(WHelperSemanticTable.getCommand("ADDVE2C"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
