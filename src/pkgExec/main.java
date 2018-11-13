@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import pkgData.WTuple;
+import pkgHelper.WAnalyzer;
 import pkgHelper.WFileHelper;
+import pkgHelper.WHelperSemanticTable;
 
 public class main {
 
@@ -12,9 +14,10 @@ public class main {
 
 		try {
 			ArrayList<String> str = WFileHelper.getFileContent("/home/wuttic/Dokumente/Rep/Java/WCalc/samplefile.cpw");
-			for(String s : str)
-				System.out.println("Line Starts: " + s + ", Line Ends");
-		} catch (IOException e) {
+			ArrayList<String> str2 = WAnalyzer.split(str);
+			for(String s : str2)
+				System.out.println(" " + s + ", ");
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
