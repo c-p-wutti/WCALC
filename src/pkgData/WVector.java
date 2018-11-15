@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class WVector {
 	ArrayList<Double> comp;
+	String name;
 	
 	public WVector() {
-		this(null);
+		this("", null);
 	}
 	
-	public WVector(ArrayList<Double> comp) {
+	public WVector(String name, ArrayList<Double> comp) {
+		setName(name);
 		setComponents(comp);
 	}
 	
@@ -19,6 +21,14 @@ public class WVector {
 	
 	public void setComponents(ArrayList<Double> comp) {
 		this.comp = comp;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	
 	public WVector add(WVector w){
@@ -33,8 +43,8 @@ public class WVector {
 			if(dim > w.getComponents().size()) ret.add(this.getComponents().get(i));
 			ret.add(this.getComponents().get(i) + w.getComponents().get(i));
 		}
-		
-		WVector v = new WVector(ret);
+		//fix
+		WVector v = new WVector("", ret);
 		return v;
 	}
 	
@@ -50,8 +60,8 @@ public class WVector {
 			if(dim > w.getComponents().size()) ret.add(this.getComponents().get(i));
 			ret.add(this.getComponents().get(i) - w.getComponents().get(i));
 		}
-		
-		WVector v = new WVector(ret);
+		//fix
+		WVector v = new WVector("", ret);
 		return v;
 	}
 	
