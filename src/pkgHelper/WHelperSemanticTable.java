@@ -1,7 +1,9 @@
 package pkgHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import pkgData.DataLoader;
 import pkgEnum.WCALC;;
 
 public class WHelperSemanticTable {
@@ -19,5 +21,18 @@ public class WHelperSemanticTable {
 			return ret;
 		else
 			throw new Exception(command + " is not a command");
+	}
+	
+	public static Object distributeCommand(ArrayList<String> command) throws Exception {
+		Object o;
+		
+		if(command.get(0).compareTo(WCALC.VEC.toString()) == 0) {
+			o = DataLoader.getWector(command);
+		}
+		
+		else {
+			throw new Exception("Error while distributing command");
+		}
+		return o;
 	}
 }

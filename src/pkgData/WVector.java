@@ -61,4 +61,14 @@ public class WVector {
 			d.add(this.getComponents().get(i) * (-1));
 		this.setComponents(d);	
 	}
+	
+	@Override
+	public String toString() {
+		String str="";
+		
+		for(Double d : this.getComponents())
+			str += "comp :" + d + "\n";
+	
+		return str;
+	}
 }

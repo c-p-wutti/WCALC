@@ -1,5 +1,5 @@
 package pkgEnum;
 
 public enum WCALC {
-	ADDCVEC, SUBVEC, INVVEC;
+	ADDCVEC, SUBVEC, INVVEC, VEC;
 }
